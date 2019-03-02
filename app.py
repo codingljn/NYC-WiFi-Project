@@ -48,6 +48,30 @@ def chart():
 
     return render_template('chart.html', values=values, labels = labels, legend=legend)
 
+@app.route('/chart2')
+def chart2():
+    legend = "Stations by Provider"
+    conn = mysql.connect()
+    cursor =conn.cursor()
+    try:
+        cursor.execute("SELECT PROVIDER, total, color from providers")
+        rows = cursor.fetchall()
+        dataitems = list()
+        fld = {} 
+        i = 0       
+        ##################################
+        for row in rows:
+            fld['PROVIDER'] = row[0]
+            fld['total'] = row[1]
+            fld['color'] = row[2]
+            dataitems.append(fld.copy()) 
+        ##################################
+        cursor.close()
+        conn.close()
+    except:
+        print ("Error: unable to fetch items")
+    return render_template('chart2.html', dataitems=dataitems)
+
 @app.route('/chart3')
 def chart3():
     legend = "Stations by Borough"
