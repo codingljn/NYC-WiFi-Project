@@ -1,14 +1,3 @@
-#mapid { height: 180px; }
-
-html,
-body,
-#map-id {
-  height: 500px;
-  width:500px;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
 
 .legend {
   padding: 10px;
