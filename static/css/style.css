@@ -30,3 +30,8 @@
 .legend .out-of-order {
   color: #007dff;
 }
+
+.jumbotron {
+  color:white;
+  background-color: black;
+}
