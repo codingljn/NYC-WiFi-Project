@@ -63,6 +63,30 @@ INSERT INTO `borosummary` VALUES ('Bronx',306),('Brooklyn',612),('Manhattan',164
 UNLOCK TABLES;
 
 --
+-- Table structure for table `providers`
+--
+
+DROP TABLE IF EXISTS `providers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `providers` (
+  `PROVIDER` text,
+  `total` bigint(21) NOT NULL DEFAULT '0',
+  `color` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `providers`
+--
+
+LOCK TABLES `providers` WRITE;
+/*!40000 ALTER TABLE `providers` DISABLE KEYS */;
+INSERT INTO `providers` VALUES ('ALTICEUSA',215,'#ea9f25'),('BPL',59,'#b55563'),('Chelsea',30,'#ed5cb5'),('City Tech',7,'#724541'),('Downtown Brooklyn',47,'#88f47c'),('Fiberless',30,'#8c7d70'),('Harlem',128,'#6f1284'),('LinkNYC - Citybridge',1867,'#4286f4'),('Manhattan Down Alliance',36,'#07697c'),('NYCHA',28,'#b0d35d'),('NYPL',90,'#e5e540'),('Partner',2,'#7bf3fc'),('QPL',65,'#a1c6b1'),('SPECTRUM',270,'#19990d'),('Spot On Networks',10,'#b68fd8'),('Transit Wireless',276,'#f45642');
+/*!40000 ALTER TABLE `providers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wifi_hotspots`
 --
 
@@ -100,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-02  9:55:28
+-- Dump completed on 2019-03-02 13:31:38
