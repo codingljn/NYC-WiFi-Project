@@ -59,13 +59,13 @@ def chart2():
         dataitems = list()
         fld = {} 
         i = 0       
-        ##################################
+        
         for row in rows:
             fld['PROVIDER'] = row[0]
             fld['total'] = row[1]
             fld['color'] = row[2]
             dataitems.append(fld.copy()) 
-        ##################################
+        
         cursor.close()
         conn.close()
     except:
@@ -83,13 +83,13 @@ def chart3():
         dataitems = list()
         fld = {} 
         i = 0       
-        ##################################
+        
         for row in rows:
             fld['BORONAME'] = row[0]
             fld['percent'] = row[1]
             fld['color'] = row[2]
             dataitems.append(fld.copy()) 
-        ##################################
+        
         cursor.close()
         conn.close()
     except:
@@ -103,4 +103,4 @@ def chart4():
     
 
 if __name__ == "__main__":
-    app.run(port=5002)
+    app.run(port=5000)

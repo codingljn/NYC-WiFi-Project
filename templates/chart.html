@@ -22,6 +22,7 @@
       </div>
     <canvas id="chart" width="800" height="600"></canvas>
     </div>
+<!-- ChartJS tutorial: "https://blog.ruanbekker.com/blog/2017/12/14/graphing-pretty-charts-with-python-flask-and-chartjs/" -->
 <script>
  
    // bar chart data
@@ -61,7 +62,7 @@
    steps = 10
    max = 1700
    
-   var BarChartDemo = new Chart(ctx).Bar(chartData, {
+   var BarChart = new Chart(ctx).Bar(chartData, {
         scaleOverride: true,
         scaleSteps: steps,
         scaleStepWidth: Math.ceil(max / steps),

@@ -5,4 +5,4 @@
 
 Welcome to the NYC WiFi finder. Please navigate through our interactive visualizations to learn more about NYC's extensive network of WiFi stations!
 
-Project built using Flask, Leaflet.js, Chart.js & MySQL
+Project built using Flask, Leaflet, D3.js, Chart.js & MySQL
