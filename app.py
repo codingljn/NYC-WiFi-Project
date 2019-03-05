@@ -100,6 +100,63 @@ def chart3():
 @app.route('/chart4') 
 def chart4():
     return render_template('chart4.html') 
+
+
+@app.route('/chart5')
+def chart5():
+   legend = "Indoor Subway Locations"
+   conn = mysql.connect()
+   cursor =conn.cursor()
+   try:
+       cursor.execute("SELECT BORONAME FROM wifi_hotspots GROUP BY BORONAME" )
+       rows = cursor.fetchall()
+       labels = list()
+       i = 0
+       for row in rows:
+           labels.append(row[i])
+
+       cursor.execute("SELECT count(Location_T) FROM wifi_hotspots Where Location_T like '%Indoor%' GROUP BY BORONAME" )
+       rows = cursor.fetchall()
+       # Convert query to objects of key-value pairs
+       values = list()
+       i = 0
+       for row in rows:
+           values.append(row[i])
+       cursor.close()
+       conn.close()
+
+   except:
+       print ("Error: unable to fetch items")
+
+   return render_template('chart5.html', values=values, labels = labels, legend=legend)
+
+@app.route('/chart6')
+def chart6():
+   legend = "Indoor Subway Locations"
+   conn = mysql.connect()
+   cursor =conn.cursor()
+   try:
+       cursor.execute("SELECT BORONAME FROM wifi_hotspots GROUP BY BORONAME")
+       rows = cursor.fetchall()
+       labels = list()
+       i = 0
+       for row in rows:
+           labels.append(row[i])
+
+       cursor.execute("SELECT count(Location_T) FROM wifi_hotspots Where Location_T like '%Outdoor%' GROUP BY BORONAME")
+       rows = cursor.fetchall()
+       # Convert query to objects of key-value pairs
+       values = list()
+       i = 0
+       for row in rows:
+           values.append(row[i])
+       cursor.close()
+       conn.close()
+
+   except:
+       print ("Error: unable to fetch items")
+
+   return render_template('chart6.html', values=values, labels = labels, legend=legend)
     
 
 if __name__ == "__main__":

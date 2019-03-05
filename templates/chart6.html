@@ -14,14 +14,13 @@
             <li role="presentation"><a href="/">Home</a></li>
             <li role="presentation"><a href="/chart4">Map</a></li>
             <li role="presentation"><a href="/chart2">Provider Chart</a></li>
-            <li role="presentation" class="active"><a href="/chart">Borough Count</a></li>
+            <li role="presentation"><a href="/chart">Borough Count</a></li>
             <li role="presentation"><a href="/chart3">Borough %</a></li>
             <li role="presentation"><a href="/chart5">Indoor</a></li>
-            <li role="presentation"><a href="/chart6">Outdoor</a></li>
-          </ul>
+            <li role="presentation" class ="active"><a href="/chart6">Outdoor</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Total</h3>
+        <h3 class="text-muted">Outdoor</h3>
       </div>
     <canvas id="chart" width="800" height="600"></canvas>
     </div>
@@ -63,7 +62,7 @@
    var ctx = document.getElementById("chart").getContext("2d");
  
    steps = 10
-   max = 1700
+   max = 1500
    
    var BarChart = new Chart(ctx).Bar(chartData, {
         scaleOverride: true,
